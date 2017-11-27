@@ -6,7 +6,7 @@ $(function () {
 	setInterval(function(){
 		$('.loading').fadeOut();
 	},3000)
-	}
+	
 	// 浜岀骇瀵艰埅
 	var olist = $(".nav-list-li"),
 		obox = $(".nav-second-list");

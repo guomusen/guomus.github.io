@@ -1,8 +1,11 @@
 $(function () {
-	document.onreadystatechange = function () {
-		if (document.readyState == 'complete') {
-			$('.loading').fadeOut()
-		}
+// 	document.onreadystatechange = function () {
+// 		if (document.readyState == 'complete') {
+// 			$('.loading').fadeOut()
+// 		}
+	setInterval(function(){
+		$('.loading').fadeOut();
+	},3000)
 	}
 	// 浜岀骇瀵艰埅
 	var olist = $(".nav-list-li"),

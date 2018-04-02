@@ -7,7 +7,7 @@ $(function () {
 		$('.loading').fadeOut();
 	},3000)
 	
-	// 浜岀骇瀵艰埅
+	// 导航栏
 	var olist = $(".nav-list-li"),
 		obox = $(".nav-second-list");
 	for (var i = 0; i < olist.length; i++) {
@@ -27,31 +27,31 @@ $(function () {
 		$("#nav-second").slideUp('slow');
 	})
 
-	//鍥剧墖杞挱	
+	//轮播图圆点	
 	var oli = $(".smallbtn li"),
 		oImg = $(".pic-wrap img");
 	picPlay($(".pic-li"), oli, $(".pic-wrap"), $(".pic-li>img:first"));
 	function picPlay(pic, list, wrap, firstobj) {
 		var len = list.length;
-		var index = 0;  //鍥剧墖搴忓彿
+		var index = 0;  //从第一张开始
 		var adTimer;
 		list.mouseover(function () {
-			index = list.index(this);  //鑾峰彇榧犳爣鎮诞 li 鐨刬ndex
+			index = list.index(this);  
 			showImg(index);
 		}).eq(0).mouseover();
-		//婊戝叆鍋滄鍔ㄧ敾锛屾粦鍑哄紑濮嬪姩鐢�.
+		//鼠标移动上去暂停.
 		wrap.hover(function () {
 			clearInterval(adTimer);
 		}, function () {
 			adTimer = setInterval(function () {
 				showImg(index);
 				index++;
-				if (index == len) {//鏈€鍚庝竴寮犲浘鐗囦箣鍚庯紝杞埌绗竴寮�
+				if (index == len) {
 					index = 0;
 				}
 			}, 5000);
 		}).trigger("mouseleave");
-		//鍥剧墖鍒囨崲
+		//切换类名
 		function showImg(index) {
 			var adHeight = firstobj.height();
 			pic.animate({
@@ -61,7 +61,7 @@ $(function () {
 				.eq(index).addClass("bg-on");
 		}
 	}
-	//渚ц竟瀵艰埅鏉�
+	//菜单栏
 	$(".main1-nav-ul > li").bind('mouseover', function (event) {
 		$(this).children(".main1-nav-list").show();
 	});
@@ -69,7 +69,7 @@ $(function () {
 		$(this).children(".main1-nav-list").hide();
 	});
 
-	// main2鍥剧墖鍗℃粴鍔ㄥ垏鎹�
+	// main2
 	oWidth = $(".main2").width();
 	index = 0;
 	timer = null;
@@ -107,7 +107,7 @@ $(function () {
 	timer = setInterval(timeAuto, 10000);
 
 
-	// 鎼厤閫夐」鍒囨崲
+	//搭配
 	var oLi = $(".dapei-head-list li"),
 		oBox = $(".dapei-tab");
 	for (var i = 0; i < oLi.length; i++) {
@@ -121,7 +121,7 @@ $(function () {
 			oLi[this.id].className = "dapei-lion";
 		}
 	}
-	// 涓轰綘鎺ㄨ崘
+	// 推荐
 	var sWidth = $(".main-tuijian").width() + 13;
 	index = 0;
 	$(".spanleft").bind("click", function () {
@@ -150,21 +150,21 @@ $(function () {
 		$(this).addClass("span-color");
 	})
 
-	// 鍐呭
+	
 	function picChange(pic, list, wrap, btn) {
 		list.click(function () {
 			var index = 0;
-			index = list.index(this);  //鑾峰彇榧犳爣鎮诞 li 鐨刬ndex
+			index = list.index(this);  
 			showImg(index)
 		})
-		//婊戝叆鎸夐挳鏄剧ず锛屾粦鍑洪殣钘�.
+		.
 		wrap.hover(function () {
 			btn.show();
 		}, function () {
 			btn.hide();
 		}).trigger("mouseleave");
 
-		//鍥剧墖鍒囨崲
+		
 		function showImg(index) {
 			var adWidth = $(".neirong-box").width();
 			pic.animate({
